@@ -32,6 +32,7 @@ class Home_c extends CI_Controller {
 		$data['mmar'] = $this->home_m->getMainMarketing();
 		$data['mar'] = $this->home_m->getMarketing();
 
+
 		$this->load->view('home_v',$data);
 	}
 

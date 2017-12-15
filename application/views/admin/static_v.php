@@ -132,7 +132,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <a class="h5 text-white" href="<?php echo base_url();?>admin/dashboard_c"><span class="h4 font-w600 sidebar-mini-hide"> Folarium</span>
+                            <a class="h5 text-white" href="#!"><span class="h4 font-w600 sidebar-mini-hide"> Folarium</span>
                             </a>
                         </div>
                         <!-- END Side Header -->
@@ -140,18 +140,7 @@
                         <!-- Side Content -->
                         <div class="side-content">
                             <ul class="nav-main">
-                                <li>
-                                    <a class="active" href="<?php echo base_url();?>admin/dashboard_c"><i class="si si-speedometer"></i><span class="sidebar-mini-hide">Dashboard</span></a>
-                                </li>
                                 <li class="nav-main-heading"><span class="sidebar-mini-hide">User Interface</span></li>
-                                <li>
-                                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-badge"></i><span class="sidebar-mini-hide">User</span></a>
-                                    <ul>
-                                        <li>
-                                            <a href="<?php echo base_url();?>index.php/admin/manage_marketing_c">Manage Marketing</a>
-                                        </li>
-                                    </ul>
-                                </li>
                                 <li>
                                     <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-badge"></i><span class="sidebar-mini-hide">Company Profile</span></a>
                                     <ul>
@@ -230,7 +219,7 @@
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li class="dropdown-header">System</li>
                                 <li>
-                                    <a tabindex="-1" href="javascript:void(0)">
+                                    <a tabindex="-1" href="<?php echo base_url();?>index.php/admin/base_pages_profile_edit_c">
                                         <i class="si si-settings pull-right"></i>Settings
                                     </a>
                                 </li>
@@ -577,6 +566,11 @@
                 });
 
                 $("#add-listDetail-input").change(function(e){
+                    e.preventDefault;
+                    readURL(this);
+                });
+
+                $("#user-pict-input").change(function(e){
                     e.preventDefault;
                     readURL(this);
                 });

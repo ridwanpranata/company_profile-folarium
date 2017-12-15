@@ -43,7 +43,7 @@ class Home_m extends CI_Model {
 	}
 
 	public function getCircleItem (){
-		$circleItem = $this->db->query('SELECT * FROM mg_content_folariumCircle;')->result();
+		$circleItem = $this->db->query('SELECT * FROM mg_content_fortnership;')->result();
 		return $circleItem;
 	}
 

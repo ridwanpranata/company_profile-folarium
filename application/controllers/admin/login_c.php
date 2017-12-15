@@ -6,7 +6,7 @@ class Login_c extends CI_Controller {
 	public function index()
 	{	
 		if ($this->session->userdata('status') == "login") {
-			redirect('admin/dashboard_c');
+			redirect('admin/manage_product_c');
 		} else {
 			$this->load->view('admin/login_v');
 		}
@@ -41,7 +41,7 @@ class Login_c extends CI_Controller {
 				);
 			$this->session->set_userdata($data_session);
 
-			redirect('admin/dashboard_c');
+			redirect('admin/manage_product_c');
 		} else {
 
 			$this->session->set_flashdata('gagallogin','Maaf, Username atau Password yang anda masukkan salah');

@@ -571,32 +571,6 @@
 				 				</div><!-- end col-xs-12 -->
 				 			</div><!-- end flat-section-title -->
 				 			
-				 			<div class="flat-section-content">
-
-				 				<?php foreach ($mar as $key): ?>
-				 					<div class="col-sm-12 col-sm-3">
-				 						<div class="team-person">
-				 							<img src="<?php echo base_url();?>assets/admin/img/marketing/<?php echo $key->user_pict; ?>" alt="">
-				 							<div class="team-profile">
-				 								<h5><?php echo $key->user_fname; ?> <?php echo $key->user_lname; ?></h5>
-				 								<p><?php echo $key->user_dept; ?></p>
-				 								<p class="about-team-person">
-				 									<?php echo $key->user_bio; ?>
-				 								</p>
-				 								<h5>Contacts :</h5>
-				 								<ul class="contact-list">
-				 									<li><span><i class="fa fa-envelope"></i></span> Email : <?php echo $key->user_email; ?></li>
-				 									<li><span><i class="fa fa-phone"></i></span> Phone : <?php echo $key->user_phone; ?></li>
-				 									<li><span><i class="fa fa-mobile"></i> </span> ID Line : <?php echo $key->user_line; ?></li>
-				 									<li><span><i class="fa fa-mobile"></i> </span> Pin BB : <?php echo $key->user_pinbb; ?></li>
-				 								</ul>
-				 							</div><!-- end team-profile -->
-				 						</div><!-- end team-person -->
-				 					</div><!-- end col-xs-4 -->
-				 				<?php endforeach ?>
-
-
-				 			</div><!-- end flat-section-content -->
 
 				 		</div><!-- end row -->
 				 	</div><!-- end container -->
@@ -637,7 +611,36 @@
 		 				<div class="col-md-6 col-xs-12">
 		 					<!-- Marketing Infomation Section -->
 		 					<div class="footer-box">
-		 						
+		 						<div class="flat-section-content">
+
+				 				<?php foreach ($mar as $key): ?>
+
+				 					<div class="col-sm-8 col-sm-offset-2 text-center col-md-6 col-md-offset-0 ">
+				 						<div class="team-person">
+				 							<img src="<?php echo base_url();?>assets/admin/img/user/<?php echo $key->user_pict; ?>" alt="">
+				 							<div class="team-profil">
+				 								<br>
+				 								<h5 style="color: white;" ><?php echo $key->user_fname; ?> <?php echo $key->user_lname; ?></h5>
+				 								<p><?php echo $key->user_dept; ?></p>
+				 							</div><!-- end team-profile -->
+				 						</div><!-- end team-person -->
+				 					</div><!-- end col-xs-4 -->
+				 					<div class="col-sm-12 col-md-6">
+				 						<br><br>
+				 						<p class="about-team-person">
+				 							<?php echo $key->user_bio; ?>
+				 						</p>
+				 						<h5  style="color: white;" >Contacts :</h5>
+				 						<ul class="contact-list">
+				 							<li><span><i class="fa fa-envelope"></i></span> Email : <?php echo $key->user_email; ?></li>
+				 							<li><span><i class="fa fa-phone"></i></span> Phone : <?php echo $key->user_phone; ?></li>
+				 							<li><span><i class="fa fa-mobile"></i> </span> ID Line : <?php echo $key->user_line; ?></li>
+				 							<li><span><i class="fa fa-mobile"></i> </span> Pin BB : <?php echo $key->user_pinbb; ?></li>
+				 						</ul>
+				 					</div>
+
+				 				<?php endforeach ?>
+				 			</div><!-- end flat-section-content -->
 		 						
 		 					</div><!-- end footer-box -->
 		 				</div><!-- end col-xs-4 -->
@@ -719,9 +722,7 @@
 		 <!-- javascript Placed at the end of the document so the pages load faster -->
 		 <!-- jQuery library -->
 		 <script src="<?php echo base_url();?>assets/js/jquery-1.12.0.min.js"></script>
-		 <!-- <script src="<?php echo base_url();?>assets/js/jquery-2.2.0.js"></script> -->
 
-		 <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script> -->
 		<!-- Slick Slider JS File -->
 		 <script src="<?php echo base_url();?>assets/js/slick.js"></script>
 
@@ -765,10 +766,7 @@
 		    });
 		  });
 		</script>
-
-
-		 <!-- all Main Plugin -->
-		 <script src="<?php echo base_url();?>assets/js/all.js"></script>
+		 
 
 		 
 
@@ -778,13 +776,11 @@
 		 <script src="<?php echo base_url();?>assets/js/jquery.validate.min.js"></script>
 		 <!-- Parallax Plugin -->
 		 <script src="<?php echo base_url();?>assets/js/jquery.stellar.min.js"></script>
-		 <script src="<?php echo base_url();?>assets/js/iscroll.js"></script>
 		 <!-- Owl Carousel Slider -->
 		 <script src="<?php echo base_url();?>assets/js/owl.carousel.min.js"></script>
 		 <!-- Owl Jquery Easing -->
 		 <script src="<?php echo base_url();?>assets/js/jquery.easing.min.js"></script>
-		 <!-- Mailchimp -->
-		 <script src="<?php echo base_url();?>assets/js/jquery.ajaxchimp.min.js"></script>
+		 
 		 <!-- Tooltip -->
 		 <script src="<?php echo base_url();?>assets/js/jquery.tooltipster.min.js"></script>
 		 <!-- Sticky Navigation -->
@@ -795,8 +791,6 @@
 		 <script src="<?php echo base_url();?>assets/js/jquery.placeholder.min.js"></script>
 		 <!-- Magnific Popup -->
 		 <script src="<?php echo base_url();?>assets/js/jquery.magnific-popup.min.js"></script>
-		 <!-- Instagram Feed -->
-		 <script src="<?php echo base_url();?>assets/js/instafeed.min.js"></script>
 		 <!-- Animation Text -->
 		 <script src="<?php echo base_url();?>assets/js/jquery.lettering.js"></script>
 		 <script src="<?php echo base_url();?>assets/js/jquery.textillate.js"></script>
@@ -813,8 +807,9 @@
 
 		 <!-- Google Map -->
 		 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA1vAzZpKh9vsQvF3e4MeClkyYB-MWtnA&callback=initMap"></script>
-		 <!-- all Main Plugin -->
 
+	 	 <!-- all Main Plugin -->
+		 <script src="<?php echo base_url();?>assets/js/all.js"></script>
 		
 		
 </body>

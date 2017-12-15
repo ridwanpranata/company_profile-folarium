@@ -2226,9 +2226,6 @@ body, ul, ol, h1,h3,h3,h4,h5,h6,form,li,p,input,select,legend,textarea,fieldset{
  	.team-person img {
  		max-width: 100%;
  		height: auto;
-	    transition: all 0.5s;
-		-webkit-filter: grayscale(1);
-				filter: grayscale(1);
  	}
 
  	.team-person .team-profile {
@@ -2250,12 +2247,7 @@ body, ul, ol, h1,h3,h3,h4,h5,h6,form,li,p,input,select,legend,textarea,fieldset{
  		margin: 0;
  		opacity: 1;
  		visibility: visible;
- 	}
-
- 	.team-person:hover img {
-		-webkit-filter: grayscale(0);
-				filter: grayscale(0);
- 	} 	 	
+ 	} 	
 
  	.team-profile h5 {
  		font-size: 18px;
