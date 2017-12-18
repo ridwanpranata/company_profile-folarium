@@ -24,12 +24,15 @@ class Main_promo_c extends CI_Controller {
 		$id = $this->input->post('main-promo-id-input');
 		$title = $this->input->post('main-promo-title-input');
 		$desc = $this->input->post('main-promo-desc-input');
+		$navbar = $this->input->post('main-promo-title-navbar-input');
 		$type = "promo";
+
 		$data = array(
-			'main_content_id' => $id,
-			'main_content_title' => $title,
-			'main_content_desc' => $desc,
-			'main_content_type' => $type
+			'main_content_id'			=> $id,
+			'main_content_title'		=> $title,
+			'main_content_desc' 		=> $desc,
+			'main_content_title_navbar' => $navbar,
+			'main_content_type' 		=> $type
 			);
 		$this->main_promo_m->edit_main_promo('mg_main_content',$data);
 		

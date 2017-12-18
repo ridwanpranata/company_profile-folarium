@@ -101,7 +101,7 @@
 // On ready
 $( document ).on( "ready" , function() {
     stickyNav();
-    youtubePlayer();
+    // youtubePlayer();
     placeholderForm();
     mobileNavigation();
     scrollToPoint();
@@ -109,13 +109,13 @@ $( document ).on( "ready" , function() {
     tooltip();
     clientsSlider();
     featuresSlider();
-    languagesPopup();
-    headerFormValidation();
-    portfolioLightbox();
+    // languagesPopup();
+    // headerFormValidation();
+    // portfolioLightbox();
     portfolio();
-    contactFormValidation();
-    instafeed();
-    initMap();
+    // contactFormValidation();
+    // instafeed();
+    // initMap();
 });
 
 
@@ -143,20 +143,20 @@ $( window ).on( "scroll" , function() {
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 
-function youtubePlayer() {
-    $(".player").YTPlayer();
-    $(".video-controls .fa-pause").on( "click", function(e) {
-        e.preventDefault();
-        $("#bg-video").YTPTogglePlay();
-        $(this).toggleClass("fa-pause fa-play");
-        $("#video h1, #video p").toggleClass("show-effect");
-    });
-    $(".video-controls .fa-volume-up").on( "click", function(e) {
-        e.preventDefault();
-        $("#bg-video").toggleVolume();
-        $(this).toggleClass("fa-volume-up fa-volume-off");
-    });   
-}
+// function youtubePlayer() {
+//     $(".player").YTPlayer();
+//     $(".video-controls .fa-pause").on( "click", function(e) {
+//         e.preventDefault();
+//         $("#bg-video").YTPTogglePlay();
+//         $(this).toggleClass("fa-pause fa-play");
+//         $("#video h1, #video p").toggleClass("show-effect");
+//     });
+//     $(".video-controls .fa-volume-up").on( "click", function(e) {
+//         e.preventDefault();
+//         $("#bg-video").toggleVolume();
+//         $(this).toggleClass("fa-volume-up fa-volume-off");
+//     });   
+// }
 
 
 
@@ -257,244 +257,244 @@ function tooltip() {
  *  ~~~~~~~~~~~~~~~~~~~~~
  */
 
-function initMap() {
-    var latlng = {lat: -33.867487, lng: 151.206990};
-    var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    scrollwheel: false,
-    navigationControl: false,
-    mapTypeControl: false,
-    draggable: true,
-    center: latlng,
-    mapTypeControlOptions: {
-      mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
-    }
-    });
+// function initMap() {
+//     var latlng = {lat: -33.867487, lng: 151.206990};
+//     var map = new google.maps.Map(document.getElementById('map'), {
+//     zoom: 12,
+//     scrollwheel: false,
+//     navigationControl: false,
+//     mapTypeControl: false,
+//     draggable: true,
+//     center: latlng,
+//     mapTypeControlOptions: {
+//       mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
+//     }
+//     });
 
-    // marker click title
-    var contentString = '<div id="content">'+
-        '<div id="siteNotice">'+
-        '</div>'+
-        '<h3 id="firstHeading" class="firstHeading">Tango Office</h3>'+
-        '<div id="bodyContent">'+
-        '<p>Here we are. Come to drink a coffee!</p>'+
-        '</div>'+
-        '</div>';
+//     // marker click title
+//     var contentString = '<div id="content">'+
+//         '<div id="siteNotice">'+
+//         '</div>'+
+//         '<h3 id="firstHeading" class="firstHeading">Tango Office</h3>'+
+//         '<div id="bodyContent">'+
+//         '<p>Here we are. Come to drink a coffee!</p>'+
+//         '</div>'+
+//         '</div>';
 
-    var infowindow = new google.maps.InfoWindow({
-    content: contentString,
-    maxWidth: 400
-    });
+//     var infowindow = new google.maps.InfoWindow({
+//     content: contentString,
+//     maxWidth: 400
+//     });
 
-    // marker image
-    var image = {
-      url: 'assets/images/general-elements/marker.png',
-      size: new google.maps.Size(50,50), // Width and height of the marker
-      origin: new google.maps.Point(0,0),
-      anchor: new google.maps.Point(20,50) // Position of the marker
-    };
+//     // marker image
+//     var image = {
+//       url: 'assets/images/general-elements/marker.png',
+//       size: new google.maps.Size(50,50), // Width and height of the marker
+//       origin: new google.maps.Point(0,0),
+//       anchor: new google.maps.Point(20,50) // Position of the marker
+//     };
 
-    var marker = new google.maps.Marker({
-    position: latlng,
-    map: map,
-    icon: image,
-    title: 'Tango Office'
-    });
+//     var marker = new google.maps.Marker({
+//     position: latlng,
+//     map: map,
+//     icon: image,
+//     title: 'Tango Office'
+//     });
 
-    google.maps.event.addDomListener(window, "resize", function() {
-        var center = map.getCenter();
-        google.maps.event.trigger(map, "resize");
-        map.setCenter(center);
-    });
+//     google.maps.event.addDomListener(window, "resize", function() {
+//         var center = map.getCenter();
+//         google.maps.event.trigger(map, "resize");
+//         map.setCenter(center);
+//     });
 
-    // marker open title
-    marker.addListener('click', function() {
-    infowindow.open(map, marker);
-    });
+//     // marker open title
+//     marker.addListener('click', function() {
+//     infowindow.open(map, marker);
+//     });
 
-    // map color
-    var customMapType = new google.maps.StyledMapType([
-    {
-        "featureType": "water",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#e9e9e9"
-            },
-            {
-                "lightness": 17
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#f5f5f5"
-            },
-            {
-                "lightness": 20
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 17
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 29
-            },
-            {
-                "weight": 0.2
-            }
-        ]
-    },
-    {
-        "featureType": "road.arterial",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 18
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 16
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#f5f5f5"
-            },
-            {
-                "lightness": 21
-            }
-        ]
-    },
-    {
-        "featureType": "poi.park",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#dedede"
-            },
-            {
-                "lightness": 21
-            }
-        ]
-    },
-    {
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "color": "#ffffff"
-            },
-            {
-                "lightness": 16
-            }
-        ]
-    },
-    {
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "saturation": 36
-            },
-            {
-                "color": "#333333"
-            },
-            {
-                "lightness": 40
-            }
-        ]
-    },
-    {
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#f2f2f2"
-            },
-            {
-                "lightness": 19
-            }
-        ]
-    },
-    {
-        "featureType": "administrative",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#fefefe"
-            },
-            {
-                "lightness": 20
-            }
-        ]
-    },
-    {
-        "featureType": "administrative",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "color": "#fefefe"
-            },
-            {
-                "lightness": 17
-            },
-            {
-                "weight": 1.2
-            }
-        ]
-    }
-    ], { name: 'Custom Style' });
+//     // map color
+//     var customMapType = new google.maps.StyledMapType([
+//     {
+//         "featureType": "water",
+//         "elementType": "geometry",
+//         "stylers": [
+//             {
+//                 "color": "#e9e9e9"
+//             },
+//             {
+//                 "lightness": 17
+//             }
+//         ]
+//     },
+//     {
+//         "featureType": "landscape",
+//         "elementType": "geometry",
+//         "stylers": [
+//             {
+//                 "color": "#f5f5f5"
+//             },
+//             {
+//                 "lightness": 20
+//             }
+//         ]
+//     },
+//     {
+//         "featureType": "road.highway",
+//         "elementType": "geometry.fill",
+//         "stylers": [
+//             {
+//                 "color": "#ffffff"
+//             },
+//             {
+//                 "lightness": 17
+//             }
+//         ]
+//     },
+//     {
+//         "featureType": "road.highway",
+//         "elementType": "geometry.stroke",
+//         "stylers": [
+//             {
+//                 "color": "#ffffff"
+//             },
+//             {
+//                 "lightness": 29
+//             },
+//             {
+//                 "weight": 0.2
+//             }
+//         ]
+//     },
+//     {
+//         "featureType": "road.arterial",
+//         "elementType": "geometry",
+//         "stylers": [
+//             {
+//                 "color": "#ffffff"
+//             },
+//             {
+//                 "lightness": 18
+//             }
+//         ]
+//     },
+//     {
+//         "featureType": "road.local",
+//         "elementType": "geometry",
+//         "stylers": [
+//             {
+//                 "color": "#ffffff"
+//             },
+//             {
+//                 "lightness": 16
+//             }
+//         ]
+//     },
+//     {
+//         "featureType": "poi",
+//         "elementType": "geometry",
+//         "stylers": [
+//             {
+//                 "color": "#f5f5f5"
+//             },
+//             {
+//                 "lightness": 21
+//             }
+//         ]
+//     },
+//     {
+//         "featureType": "poi.park",
+//         "elementType": "geometry",
+//         "stylers": [
+//             {
+//                 "color": "#dedede"
+//             },
+//             {
+//                 "lightness": 21
+//             }
+//         ]
+//     },
+//     {
+//         "elementType": "labels.text.stroke",
+//         "stylers": [
+//             {
+//                 "visibility": "on"
+//             },
+//             {
+//                 "color": "#ffffff"
+//             },
+//             {
+//                 "lightness": 16
+//             }
+//         ]
+//     },
+//     {
+//         "elementType": "labels.text.fill",
+//         "stylers": [
+//             {
+//                 "saturation": 36
+//             },
+//             {
+//                 "color": "#333333"
+//             },
+//             {
+//                 "lightness": 40
+//             }
+//         ]
+//     },
+//     {
+//         "elementType": "labels.icon",
+//         "stylers": [
+//             {
+//                 "visibility": "off"
+//             }
+//         ]
+//     },
+//     {
+//         "featureType": "transit",
+//         "elementType": "geometry",
+//         "stylers": [
+//             {
+//                 "color": "#f2f2f2"
+//             },
+//             {
+//                 "lightness": 19
+//             }
+//         ]
+//     },
+//     {
+//         "featureType": "administrative",
+//         "elementType": "geometry.fill",
+//         "stylers": [
+//             {
+//                 "color": "#fefefe"
+//             },
+//             {
+//                 "lightness": 20
+//             }
+//         ]
+//     },
+//     {
+//         "featureType": "administrative",
+//         "elementType": "geometry.stroke",
+//         "stylers": [
+//             {
+//                 "color": "#fefefe"
+//             },
+//             {
+//                 "lightness": 17
+//             },
+//             {
+//                 "weight": 1.2
+//             }
+//         ]
+//     }
+//     ], { name: 'Custom Style' });
 
-    var customMapTypeId = 'custom_style'
-    map.mapTypes.set(customMapTypeId, customMapType);
-    map.setMapTypeId(customMapTypeId);
+//     var customMapTypeId = 'custom_style'
+//     map.mapTypes.set(customMapTypeId, customMapType);
+//     map.setMapTypeId(customMapTypeId);
 
-}
+// }
 
 
 
@@ -531,50 +531,50 @@ function navScrollTo() {
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 
-function instafeed() {
-    var feed = new Instafeed({
-        get: 'user',
-        userId: 2941793815,  //Your ID Number Here
-        resolution: 'standard_resolution',
-        accessToken: '2130897638.467ede5.7a543386560f4666b437cb1f6a449c74',
-        template: '<li class="item"><a href="{{link}}" target="_blank"><span class="icon-overlay"><i class="fa ' + 'fa-instagram"></i></span><img class="img-responsive" src="{{image}}" /></a></li>',
-        limit: 16, // Number of photo will get from instagram 
-        target: 'instafeed',
-        after: function() {
-            $('#instafeed').owlCarousel({
-              items : 8, // Number of photo will be visable 
-              autoPlay: 3000,
-              itemsDesktop : [1199,3],
-              itemsDesktopSmall : [979,3],
-              navigation : false,
-              navigationText : ["<i class='fa fa-long-arrow-left'></i>","<i class='fa fa-long-arrow-right'></i>"],
-              pagination : false
-            });
-        }
-    });
-    feed.run();
-}
+// function instafeed() {
+//     var feed = new Instafeed({
+//         get: 'user',
+//         userId: 2941793815,  //Your ID Number Here
+//         resolution: 'standard_resolution',
+//         accessToken: '2130897638.467ede5.7a543386560f4666b437cb1f6a449c74',
+//         template: '<li class="item"><a href="{{link}}" target="_blank"><span class="icon-overlay"><i class="fa ' + 'fa-instagram"></i></span><img class="img-responsive" src="{{image}}" /></a></li>',
+//         limit: 16, // Number of photo will get from instagram 
+//         target: 'instafeed',
+//         after: function() {
+//             $('#instafeed').owlCarousel({
+//               items : 8, // Number of photo will be visable 
+//               autoPlay: 3000,
+//               itemsDesktop : [1199,3],
+//               itemsDesktopSmall : [979,3],
+//               navigation : false,
+//               navigationText : ["<i class='fa fa-long-arrow-left'></i>","<i class='fa fa-long-arrow-right'></i>"],
+//               pagination : false
+//             });
+//         }
+//     });
+//     feed.run();
+// }
 
 
 /** [ 1.14] - Languages Popup
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 
-function languagesPopup() {
-    $('.Languages').magnificPopup({
-        type: 'inline',
-        fixedContentPos: false,
-        fixedBgPos: true,
-        overflowY: 'auto',
-        closeBtnInside: false,
-        autoFocusLast: false,
-        preloader: false,
-        showCloseBtn: true,
-        midClick: true,
-        removalDelay: 300,
-        mainClass: 'zoom-effect'
-    }); 
-}
+// function languagesPopup() {
+//     $('.Languages').magnificPopup({
+//         type: 'inline',
+//         fixedContentPos: false,
+//         fixedBgPos: true,
+//         overflowY: 'auto',
+//         closeBtnInside: false,
+//         autoFocusLast: false,
+//         preloader: false,
+//         showCloseBtn: true,
+//         midClick: true,
+//         removalDelay: 300,
+//         mainClass: 'zoom-effect'
+//     }); 
+// }
 
 
 
@@ -582,34 +582,34 @@ function languagesPopup() {
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 
-function portfolioLightbox() {
-  $('.portfolio-items-list').magnificPopup({
-    delegate: 'a',
-    type: 'image',
-    gallery:{
-      enabled:true,
-      callbacks: {
-        beforeOpen: function() {
-        // just a hack that adds mfp-anim class to markup 
-        this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
-        this.st.mainClass = this.st.el.attr('data-effect');
-        }
-      },
-      closeOnContentClick: true,
-      midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
-      },
-    removalDelay: 300, //delay removal by X to allow out-animation
-    callbacks: {
-        beforeOpen: function() {
-          // just a hack that adds mfp-anim class to markup 
-          this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
-          this.st.mainClass = this.st.el.attr('data-effect');
-        },
-    },
-    closeOnContentClick: true,
-    midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
-  });
-}
+// function portfolioLightbox() {
+  // $('.portfolio-items-list').magnificPopup({
+  //   delegate: 'a',
+  //   type: 'image',
+  //   gallery:{
+  //     enabled:true,
+  //     callbacks: {
+  //       beforeOpen: function() {
+  //       // just a hack that adds mfp-anim class to markup 
+  //       this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+  //       this.st.mainClass = this.st.el.attr('data-effect');
+  //       }
+  //     },
+  //     closeOnContentClick: true,
+  //     midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+  //     },
+  //   removalDelay: 300, //delay removal by X to allow out-animation
+  //   callbacks: {
+  //       beforeOpen: function() {
+  //         // just a hack that adds mfp-anim class to markup 
+  //         this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+  //         this.st.mainClass = this.st.el.attr('data-effect');
+  //       },
+  //   },
+  //   closeOnContentClick: true,
+  //   midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+  // });
+// }
 
 
 
@@ -1045,56 +1045,56 @@ function convertHex( hex , opacity ){
  *  ~~~~~~~~~~~~~~~~~~~~~~
  */
 
-function headerFormValidation() {
-    $( "#contact-form" ).validate({
-        // rules
-        rules: {
-            name: {
-                required: true,
-                minlength: 4
-            },
-            email: {
-                required: true,
-                email: true
-            },
-            message: {
-                required: true,
-                minlength: 4,
-                maxlength: 500
-            }
-        },
+// function headerFormValidation() {
+//     $( "#contact-form" ).validate({
+//         // rules
+//         rules: {
+//             name: {
+//                 required: true,
+//                 minlength: 4
+//             },
+//             email: {
+//                 required: true,
+//                 email: true
+//             },
+//             message: {
+//                 required: true,
+//                 minlength: 4,
+//                 maxlength: 500
+//             }
+//         },
 
-        // messages
-        messages: {
-            name: {
-                required: "Please enter your full name.",
-                minlength: "Full name must consist of at least {0} characters."
-            },
-            email: {
-                required: "Please enter your email address."
-            },
-            message: {
-                required: "Please enter your message.",
-                minlength: "your message must be at least {0} characters.",
-                maxlength: "your message must be at most {0} characters."
-            }
-        }
-    });
+//         // messages
+//         messages: {
+//             name: {
+//                 required: "Please enter your full name.",
+//                 minlength: "Full name must consist of at least {0} characters."
+//             },
+//             email: {
+//                 required: "Please enter your email address."
+//             },
+//             message: {
+//                 required: "Please enter your message.",
+//                 minlength: "your message must be at least {0} characters.",
+//                 maxlength: "your message must be at most {0} characters."
+//             }
+//         }
+//     });
 
-    $( "#contact-form" ).on( "submit", function(event) {
-        if ( event.isDefaultPrevented() ) {
-            formError();
-            var errorContent =  '<img src="assets/images/files/form-message/error.png">' +
-                                '<h5 style="color:#C75C5C;">Something Went Wrong!</h5>' +
-                                '<p>E-mail must be valid and your name must be longer than 4 character.</p>';
-            submitMSG(false, errorContent);
-        } else {
-            // everything looks good!
-            event.preventDefault();
-            submitForm();
-        }
-    });  
-}
+//     $( "#contact-form" ).on( "submit", function(event) {
+//         if ( event.isDefaultPrevented() ) {
+//             formError();
+//             var errorContent =  '<img src="assets/images/files/form-message/error.png">' +
+//                                 '<h5 style="color:#C75C5C;">Something Went Wrong!</h5>' +
+//                                 '<p>E-mail must be valid and your name must be longer than 4 character.</p>';
+//             submitMSG(false, errorContent);
+//         } else {
+//             // everything looks good!
+//             event.preventDefault();
+//             submitForm();
+//         }
+//     });  
+// }
 
 
 
@@ -1172,21 +1172,21 @@ $('#msgSubmit').find('i').on( "click", function() {
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 
-$( "#subscribe-form" ).ajaxChimp({
-    callback: mailchimpCallback,
-    url: "http://themeforest.us12.list-manage.com/subscribe/post?u=271ee03ffa4f5e3888d79125e&amp;id=163f4114e2" //Replace this with your own mailchimp post URL. 
-});
+// $( "#subscribe-form" ).ajaxChimp({
+//     callback: mailchimpCallback,
+//     url: "http://themeforest.us12.list-manage.com/subscribe/post?u=271ee03ffa4f5e3888d79125e&amp;id=163f4114e2" //Replace this with your own mailchimp post URL. 
+// });
 
 
 
-function mailchimpCallback(resp) {
-    if (resp.result === 'success') {
-        $('.subscribe-result').hide().html('<div class="success">' + resp.msg + '</div>').slideDown().delay(10000).slideUp();
-    }
-    else if (resp.result === 'error') {
-        $('.subscribe-result').hide().html('<div class="error">' + resp.msg + '</div>').slideDown().delay(10000).slideUp();
-    }
-}
+// function mailchimpCallback(resp) {
+//     if (resp.result === 'success') {
+//         $('.subscribe-result').hide().html('<div class="success">' + resp.msg + '</div>').slideDown().delay(10000).slideUp();
+//     }
+//     else if (resp.result === 'error') {
+//         $('.subscribe-result').hide().html('<div class="error">' + resp.msg + '</div>').slideDown().delay(10000).slideUp();
+//     }
+// }
 
 
 
@@ -1195,64 +1195,64 @@ function mailchimpCallback(resp) {
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 
-function contactFormValidation() {
-    $( "#contact-form2" ).validate({
-        // rules
-        rules: {
-            name2: {
-                required: true,
-                minlength: 4
-            },
-            email2: {
-                required: true,
-                email: true
-            },
-            subject2: {
-                required: true,
-                minlength: 4
-            },
-            message2: {
-                required: true,
-                minlength: 4,
-                maxlength: 500
-            }
-        },
+// function contactFormValidation() {
+//     $( "#contact-form2" ).validate({
+//         // rules
+//         rules: {
+//             name2: {
+//                 required: true,
+//                 minlength: 4
+//             },
+//             email2: {
+//                 required: true,
+//                 email: true
+//             },
+//             subject2: {
+//                 required: true,
+//                 minlength: 4
+//             },
+//             message2: {
+//                 required: true,
+//                 minlength: 4,
+//                 maxlength: 500
+//             }
+//         },
 
-        // messages
-        messages: {
-            name2: {
-                required: "Please enter your full name.",
-                minlength: "Full name must consist of at least {0} characters."
-            },
-            email2: {
-                required: "Please enter your email address."
-            },
-            subject2: {
-                required: "Please enter your subject.",
-                minlength: "Full name must consist of at least {0} characters."
-            },
-            message2: {
-                required: "Please enter your message.",
-                minlength: "your message must be at least {0} characters.",
-                maxlength: "your message must be at most {0} characters."
-            }
-        }
-    });
+//         // messages
+//         messages: {
+//             name2: {
+//                 required: "Please enter your full name.",
+//                 minlength: "Full name must consist of at least {0} characters."
+//             },
+//             email2: {
+//                 required: "Please enter your email address."
+//             },
+//             subject2: {
+//                 required: "Please enter your subject.",
+//                 minlength: "Full name must consist of at least {0} characters."
+//             },
+//             message2: {
+//                 required: "Please enter your message.",
+//                 minlength: "your message must be at least {0} characters.",
+//                 maxlength: "your message must be at most {0} characters."
+//             }
+//         }
+//     });
 
-    $( "#contact-form2" ).on( "submit", function(event) {
-        if ( event.isDefaultPrevented() ) {
-            formError2();
-            var errorContent =  '<img src="assets/images/files/form-message/error.png">' +
-                                '<h5 style="color:#C75C5C;">Something Went Wrong!</h5>' +
-                                '<p>E-mail must be valid and your name must be longer than 4 character.</p>';
-            submitMSG2(false, errorContent);
-        } else {
+//     $( "#contact-form2" ).on( "submit", function(event) {
+//         if ( event.isDefaultPrevented() ) {
+//             formError2();
+//             var errorContent =  '<img src="assets/images/files/form-message/error.png">' +
+//                                 '<h5 style="color:#C75C5C;">Something Went Wrong!</h5>' +
+//                                 '<p>E-mail must be valid and your name must be longer than 4 character.</p>';
+//             submitMSG2(false, errorContent);
+//         } else {
             
-            event.preventDefault();
-            submitForm2();
-        }
-    });  
-}
+//             event.preventDefault();
+//             submitForm2();
+//         }
+//     });  
+// }
 
 
 

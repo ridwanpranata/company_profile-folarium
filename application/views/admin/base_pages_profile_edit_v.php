@@ -5,13 +5,13 @@
                     <div class="row items-push">
                         <div class="col-sm-8">
                             <h1 class="page-heading">
-                                User Profile
+                                User Profile Settings
                             </h1>
                         </div>
                         <div class="col-sm-4 text-right hidden-xs">
                             <ol class="breadcrumb push-10-t">
-                                <li>Forms</li>
-                                <li><a class="link-effect" href="">Form User Profile</a></li>
+                                <li>Settings</li>
+                                <li><a class="link-effect" href="">User Profile</a></li>
                             </ol>
                         </div>
                     </div>

@@ -101,7 +101,6 @@ class Base_pages_profile_edit_c extends CI_Controller {
 			'user_phone' => $phone,
 			'user_line' => $line,
 			'user_pinbb' => $pinbb,
-			// 'user_pict' => $filename
 			);
 
 		$this->base_pages_profile_edit_m->edit_profile('md_user',$data,$id);

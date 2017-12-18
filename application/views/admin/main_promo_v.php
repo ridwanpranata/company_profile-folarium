@@ -51,6 +51,12 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
+                                            <label class="col-xs-12">Title in Navbar</label>
+                                            <div class="col-sm-9">
+                                                <input class="form-control" type="text" id="main-promo-title-navbar-input" name="main-promo-title-navbar-input" placeholder="Text.." value="<?php echo $main_promo->main_content_title_navbar;?>" required="true">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             <div class="col-xs-12">
                                                 <button class="btn btn-sm btn-primary pull-right" type="submit">Save</button>
                                             </div>

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="description" content="Tango - Responsive Multi-Purpose Landing Page">
-	<meta name="keywords" content="Responsive, Startup, Onepage, Parallax, Landing, HTML, Business, Corporate">
-	<meta name="author" content="Ridwan Pranata">
+	<meta name="author" content="<?php echo $seo->seo_author; ?>">
+	<meta name="description" content="<?php echo $seo->seo_description; ?>">
+	<meta name="keywords" content="<?php echo $seo->seo_keyword; ?>">
 	
 	<!-- Site title -->
 	<title>Folarium | Marketing</title>
@@ -127,12 +127,12 @@
 		 							<div class="phone-contact">
 		 								<i class="fa fa-phone"></i>
 		 								<small>Call Us:</small>
-		 								<a href="tel:+62-812-3955-1114">(+62) 812 3955 1114</a> 
+		 								<a href="tel:<?php echo $mar->user_phone; ?>"><?php echo $mar->user_phone; ?></a>
 		 							</div><!-- end phone-contact -->
 		 							<div class="email-contact hidden-sm hidden-xs">
 		 								<i class="fa fa-envelope"></i>
 		 								<small>Email:</small>
-		 								<a href="mailto:marketing@folarium.co.id">marketing@folarium.co.id</a>	
+		 								<a href="mailto:<?php echo $mar->user_email; ?>"><?php echo $mar->user_email; ?></a>
 		 							</div><!-- end email-contact -->
 		 						</div><!-- end subnav-contact -->
 		 					</div><!-- end col-xs-6 -->
@@ -162,10 +162,9 @@
 		 						<nav id="main-menu">
 		 							<ul class="main-menu">
 		 								<li><a class="scroll-to" data-scroll-nav="0" href="#header">Home</a></li>
-		 								<li><a class="scroll-to" data-scroll-nav="2" href="#why-folarium">Why Folarium</a></li>
-		 								<li><a class="scroll-to" data-scroll-nav="3" href="#products">Product</a></li>
-		 								<li><a class="scroll-to" data-scroll-nav="4" href="#promo">Promo</a></li>
-		 								<li><a class="scroll-to" data-scroll-nav="5" href="#our-marketing">Our Marketing</a></li>
+		 								<li><a class="scroll-to" data-scroll-nav="2" href="#why-folarium"><?php echo $mben->main_content_title_navbar; ?></a></li>
+		 								<li><a class="scroll-to" data-scroll-nav="3" href="#products"><?php echo $mpd->main_content_title_navbar; ?></a></li>
+		 								<li><a class="scroll-to" data-scroll-nav="4" href="#promo"><?php echo $mprom->main_content_title_navbar; ?></a></li>
 		 							</ul><!-- end main-menu -->
 		 						</nav><!-- end nav -->
 		 						<div class="nav-trigger">
@@ -241,7 +240,7 @@
 			 						</p>
 			 					</div><!-- end col-xs-12 -->
 			 				</div><!-- end flat-section-title -->
-
+				 			<hr style="border-top: 1px solid #ccc; margin-top: 0px; ">
 			 				<div class="flat-section-content">
 			 					<div class="col-xs-12 col-md-6">
 
@@ -338,7 +337,7 @@
 				 				
 				 					<?php foreach ($benefit as $key): ?>
 
-					 					<div class="col-xs-12 col-sm-6 col-md-4 why-folarium-box">
+					 					<div class="why-folarium-box">
 					 						<div class="info-box-1">
 					 							<img src="<?php echo base_url();?>assets/admin/img/benefit/<?php echo $key->content_benefit_pict;?>" alt="">
 					 							<h3><?php echo $key->content_benefit_title;?></h3>
@@ -412,10 +411,10 @@
 				 											<div class="portfolio-item-info">
 				 												<h4><?php echo $key->content_product_title; ?></h4>
 				 												<p><?php echo $key->content_product_desc; ?></p>
-				 												<a data-toggle="modal" href="<?php echo base_url();?>detail_c/detailContent/<?php echo $key->content_product_title; ?>">
+				 												<a data-toggle="modal" href="<?php echo base_url();?>detail_c/detailContent/<?php echo $key->content_product_title; ?>" target="_blank">
 				 													<button type="button" class="btn btn-primary">Detail</button>
 				 												</a>
-				 												<a data-toggle="modal" href="https://www.google.co.id/?gws_rd=ssl">
+				 												<a data-toggle="modal" href="<?php echo $key->content_product_ytLink; ?>" target="_blank">
 				 													<button type="button" class="btn btn-primary">Demo</button>
 				 												</a>
 				 											</div>
@@ -538,7 +537,6 @@
 				 							</div>
 				 						</div>
 				 						<span class="clearfix"></span>
-				 						<hr>
 				 					</div>
 				 			</div><!-- end flat-section-content -->
 
@@ -551,48 +549,7 @@
 				 ============================================ -->
 
 
-
-			<!-- ===========================================
-				 Start "Our Marketing" Section
-				 ============================================ -->
-				 <section data-scroll-index="5" id="our-marketing" class="flat-section">
-				 	<div class="container">
-				 		<div class="row">
-
-				 			<div class="flat-section-title">
-				 				<div class="col-xs-12">
-
-				 					<h3><?php echo $mmar->main_content_title; ?></h3>
-				 					<div class="title-line"></div>
-				 					<p>
-				 						<?php echo $mmar->main_content_desc; ?>
-				 					</p>
-				 					
-				 				</div><!-- end col-xs-12 -->
-				 			</div><!-- end flat-section-title -->
-				 			
-
-				 		</div><!-- end row -->
-				 	</div><!-- end container -->
-				 </section><!-- end our-marketing -->
-			<!-- ===========================================
-				 End "Our Marketing" Section
-				 ============================================ -->
-
-
-				 <!--Start of Tawk.to Script-->
-				 <script type="text/javascript">
-				 	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-				 	(function(){
-				 		var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-				 		s1.async=true;
-				 		s1.src='https://embed.tawk.to/5899890155c2fd09f848710a/default';
-				 		s1.charset='UTF-8';
-				 		s1.setAttribute('crossorigin','*');
-				 		s0.parentNode.insertBefore(s1,s0);
-				 	})();
-				 </script>
-				 <!--End of Tawk.to Script-->
+				 
 
 				</div><!-- end main -->	
 			</div><!-- end main-container -->
@@ -613,33 +570,34 @@
 		 					<div class="footer-box">
 		 						<div class="flat-section-content">
 
-				 				<?php foreach ($mar as $key): ?>
 
 				 					<div class="col-sm-8 col-sm-offset-2 text-center col-md-6 col-md-offset-0 ">
 				 						<div class="team-person">
-				 							<img src="<?php echo base_url();?>assets/admin/img/user/<?php echo $key->user_pict; ?>" alt="">
-				 							<div class="team-profil">
-				 								<br>
-				 								<h5 style="color: white;" ><?php echo $key->user_fname; ?> <?php echo $key->user_lname; ?></h5>
-				 								<p><?php echo $key->user_dept; ?></p>
-				 							</div><!-- end team-profile -->
+				 							<img src="<?php echo base_url();?>assets/admin/img/user/<?php echo $mar->user_pict; ?>" alt="">
+				 							
 				 						</div><!-- end team-person -->
 				 					</div><!-- end col-xs-4 -->
 				 					<div class="col-sm-12 col-md-6">
 				 						<br><br>
+				 						<div class="team-profil">
+				 							<br>
+				 							<h5 style="color: white;" ><?php echo $mar->user_fname; ?> <?php echo $mar->user_lname; ?></h5>
+				 							<p><?php echo $mar->user_dept; ?></p>
+				 						</div><!-- end team-profile -->
 				 						<p class="about-team-person">
-				 							<?php echo $key->user_bio; ?>
+				 							<?php echo $mar->user_bio; ?>
 				 						</p>
 				 						<h5  style="color: white;" >Contacts :</h5>
 				 						<ul class="contact-list">
-				 							<li><span><i class="fa fa-envelope"></i></span> Email : <?php echo $key->user_email; ?></li>
-				 							<li><span><i class="fa fa-phone"></i></span> Phone : <?php echo $key->user_phone; ?></li>
-				 							<li><span><i class="fa fa-mobile"></i> </span> ID Line : <?php echo $key->user_line; ?></li>
-				 							<li><span><i class="fa fa-mobile"></i> </span> Pin BB : <?php echo $key->user_pinbb; ?></li>
+				 							<li><i class="fa fa-envelope"></i><span> Email : </span><a href="mailto:<?php echo $mar->user_email; ?>"><?php echo $mar->user_email; ?></a></li>
+
+				 							<li><i class="fa fa-phone"></i><span> Phone : </span><a href="tel:<?php echo $mar->user_phone; ?>"><?php echo $mar->user_phone; ?></a></li>
+
+				 							<li><i class="fa fa-mobile"></i><span> ID Line : </span><?php echo $mar->user_line; ?></li>
+				 							<li><i class="fa fa-mobile"></i><span> Pin BB : </span><?php echo $mar->user_pinbb; ?></li>
 				 						</ul>
 				 					</div>
 
-				 				<?php endforeach ?>
 				 			</div><!-- end flat-section-content -->
 		 						
 		 					</div><!-- end footer-box -->
@@ -725,6 +683,20 @@
 
 		<!-- Slick Slider JS File -->
 		 <script src="<?php echo base_url();?>assets/js/slick.js"></script>
+		
+		<!--Start of Tawk.to Script-->
+		<script type="text/javascript">
+			var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+			(function(){
+				var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+				s1.async=true;
+				s1.src='https://embed.tawk.to/5899890155c2fd09f848710a/default';
+				s1.charset='UTF-8';
+				s1.setAttribute('crossorigin','*');
+				s0.parentNode.insertBefore(s1,s0);
+			})();
+		</script>
+		<!--End of Tawk.to Script-->
 
 		 <script type="text/javascript">
 		  $(document).on('ready', function() {
@@ -746,14 +718,14 @@
 		            }
 		          },
 		          {
-		            breakpoint: 600,
+		            breakpoint: 991,
 		            settings: {
 		              slidesToShow: 2,
 		              slidesToScroll: 2
 		            }
 		          },
 		          {
-		            breakpoint: 480,
+		            breakpoint: 600,
 		            settings: {
 		              slidesToShow: 1,
 		              slidesToScroll: 1
@@ -767,13 +739,13 @@
 		  });
 		</script>
 		 
-
-		 
+		 <!-- Slim  Scroll -->
+		 <script src="<?php echo base_url();?>assets/js/jquery.slimscroll.min.js"></script>
 
 		 <!-- Youtube Video -->
 		 <script src="<?php echo base_url();?>assets/js/jquery.mb.YTPlayer.min.js"></script>
 		 <!-- Validator -->
-		 <script src="<?php echo base_url();?>assets/js/jquery.validate.min.js"></script>
+		 <!-- <script src="<?php echo base_url();?>assets/js/jquery.validate.min.js"></script> -->
 		 <!-- Parallax Plugin -->
 		 <script src="<?php echo base_url();?>assets/js/jquery.stellar.min.js"></script>
 		 <!-- Owl Carousel Slider -->
@@ -790,26 +762,29 @@
 		 <!-- Placeholder -->
 		 <script src="<?php echo base_url();?>assets/js/jquery.placeholder.min.js"></script>
 		 <!-- Magnific Popup -->
-		 <script src="<?php echo base_url();?>assets/js/jquery.magnific-popup.min.js"></script>
+		 <!-- <script src="<?php echo base_url();?>assets/js/jquery.magnific-popup.min.js"></script> -->
 		 <!-- Animation Text -->
 		 <script src="<?php echo base_url();?>assets/js/jquery.lettering.js"></script>
 		 <script src="<?php echo base_url();?>assets/js/jquery.textillate.js"></script>
 
 		 <!-- Quicksand Portfolio -->
-		 <script src="<?php echo base_url();?>assets/js/jquery.quicksand.js"></script>
+		 <!-- <script src="<?php echo base_url();?>assets/js/jquery.quicksand.js"></script> -->
 		 <!-- <script src="<?php echo base_url();?>assets/js/jquery-animate-css-rotate-scale.js"></script> -->
-
-		 
 
 		 <!-- Bootstrap Js -->
 		 <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
 
 
-		 <!-- Google Map -->
-		 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA1vAzZpKh9vsQvF3e4MeClkyYB-MWtnA&callback=initMap"></script>
-
 	 	 <!-- all Main Plugin -->
 		 <script src="<?php echo base_url();?>assets/js/all.js"></script>
+
+		 <script>
+		 	$(function(){
+		 		$('.portfolio-items-list-2').slimScroll({
+		 			height: '650px'
+		 		});
+		 	});
+		 </script>
 		
 		
 </body>

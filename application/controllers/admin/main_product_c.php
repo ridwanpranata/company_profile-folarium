@@ -24,13 +24,15 @@ class Main_product_c extends CI_Controller {
 		$id = $this->input->post('mainproduct-id-input');
 		$title = $this->input->post('mainproduct-title-input');
 		$desc = $this->input->post('mainproduct-desc-input');
+		$navbar = $this->input->post('mainproduct-title-navbar-input');
 		$type = "product_demo";
 
 		$data = array(
-			'main_content_id' => $id,
-			'main_content_title' => $title,
-			'main_content_desc' => $desc,
-			'main_content_type' => $type,
+			'main_content_id'			=> $id,
+			'main_content_title'		=> $title,
+			'main_content_desc' 		=> $desc,
+			'main_content_title_navbar' => $navbar,
+			'main_content_type' 		=> $type
 
 			);
 		$this->main_product_m->edit_detail_demo('mg_main_content',$data);

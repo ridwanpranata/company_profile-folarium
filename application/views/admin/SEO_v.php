@@ -5,13 +5,13 @@
                     <div class="row items-push">
                         <div class="col-sm-8">
                             <h1 class="page-heading">
-                                Detail Product & Demo - Main Title
+                                SEO Settings
                             </h1>
                         </div>
                         <div class="col-sm-4 text-right hidden-xs">
                             <ol class="breadcrumb push-10-t">
-                                <li>Manage Product</li>
-                                <li><a class="link-effect" href="">Main Title</a></li>
+                                <li>Settings</li>
+                                <li><a class="link-effect" href="">SEO</a></li>
                             </ol>
                         </div>
                     </div>
@@ -34,24 +34,24 @@
                                     </ul>
                                 </div>
                                 <div class="block-content block-content-narrow">
-                                    <form class="form-horizontal" action="main_product_c/edit" method="post">
-                                        <input type="hidden" id="mainproduct-id-input" name="mainproduct-id-input" value="<?php echo $mainproduct->main_content_id; ?>">
+                                    <form class="form-horizontal" action="seo_c/edit" method="post">
+                                        <input type="hidden" id="seo-id-input" name="seo-id-input" value="<?php echo $seo->seo_id; ?>">
                                         <div class="form-group">
-                                            <label class="col-xs-12">Title</label>
+                                            <label class="col-xs-12">Author</label>
                                             <div class="col-sm-9">
-                                                <input class="form-control" type="text" id="mainproduct-title-input" name="mainproduct-title-input" placeholder="Text.." value="<?php echo $mainproduct->main_content_title; ?>" required="true">
+                                                <input class="form-control" type="text" id="seo-author-input" name="seo-author-input" placeholder="Text.." value="<?php echo $seo->seo_author; ?>" required="true">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-xs-12" for="mainproduct-desc-input">Describe</label>
+                                            <label class="col-xs-12" for="seo-desc-input">Description</label>
                                             <div class="col-xs-12">
-                                                <textarea class="form-control" id="mainproduct-desc-input" name="mainproduct-desc-input" rows="6" placeholder="Describe your Company"><?php echo $mainproduct->main_content_desc; ?></textarea>
+                                                <textarea class="form-control" id="seo-desc-input" name="seo-desc-input" rows="6" placeholder="Describe your Company"><?php echo $seo->seo_description; ?></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-xs-12">Title in Navbar</label>
-                                            <div class="col-sm-9">
-                                                <input class="form-control" type="text" id="mainproduct-title-navbar-input" name="mainproduct-title-navbar-input" placeholder="Text.." value="<?php echo $mainproduct->main_content_title_navbar; ?>" required="true">
+                                            <label class="col-xs-12" for="seo-desc-input">Description</label>
+                                            <div class="col-xs-12">
+                                                <textarea class="form-control" id="seo-keyword-input" name="seo-keyword-input" rows="6" placeholder="Describe your Company"><?php echo $seo->seo_keyword; ?></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">

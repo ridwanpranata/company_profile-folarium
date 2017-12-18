@@ -19,11 +19,17 @@ class Manage_header_m extends CI_Model {
 	{
 
 		$this->db->where('content_header_id',$id);
+		return $this->db->update($table,$data);
+		
+	}
+
+	public function edit_header_picture($table,$data,$id)
+	{
+		$this->db->where('content_header_id',$id);
 		$row = $this->db->query("SELECT content_header_pict FROM mg_content_header WHERE content_header_id = '$id';")->last_row();
 		$filename = $row->content_header_pict;
 		unlink("assets/admin/img/header/".$filename);
 		return $this->db->update($table,$data);
-		
 	}
 
 	public function add_list_header($table,$list_header)

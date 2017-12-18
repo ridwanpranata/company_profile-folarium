@@ -34,6 +34,16 @@
 				 								<?php } else { ?>
 				 									<img class="img-responsive" src="<?php echo base_url();?>assets/admin/img/products/<?php echo $products->content_product_pict; ?>" alt="">
 				 								<?php } ?>
+				 							</div><!-- end col-md-8 col-xs-12 -->
+				 							<div class="col-md-4 col-xs-12">
+				 								<div class="detail-icon-list">
+													<?php foreach ($getListDetail as $key): ?>
+														<img class="img-responsive" src="<?php echo base_url();?>assets/admin/img/products/detail-pict/<?php echo $key->content_listDetail_item ?>" alt="">
+													<?php endforeach ?>
+
+				 								</div>
+				 							</div><!-- end col-md-4 col-xs-12 -->
+				 							<div class="col-md-8 col-xs-12">
 				 								<?php if($products->content_product_proposal != NULL){ ?>
 				 								<a role="button" class="download-company-profile featured-button col-xs-12" href="<?php echo base_url();?>assets/admin/file/product-proposal/<?php echo $products->content_product_proposal; ?>" download="Folarium - Proposal <?php echo $products->content_product_title; ?>">
 				 									<i class="fa fa-cloud-download"></i> Download
@@ -48,15 +58,6 @@
 				 								</a>
 				 								<?php } ?>
 				 							</div><!-- end col-md-8 col-xs-12 -->
-				 							<div class="col-md-4 col-xs-12">
-				 								<div class="detail-icon-list">
-													
-													<?php foreach ($getListDetail as $key): ?>
-														<img class="img-responsive" src="<?php echo base_url();?>assets/admin/img/products/detail-pict/<?php echo $key->content_listDetail_item ?>" alt="">
-													<?php endforeach ?>
-
-				 								</div>
-				 							</div><!-- end col-md-4 col-xs-12 -->
 				 						</div><!-- end more-features-right-box -->
 				 					</div><!-- end col-xs-12 -->
 				 				</div><!-- end flat-section-content -->

@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home_m extends CI_Model {
 
+	public function getSeo()
+	{
+		$seo = $this->db->query('SELECT * FROM mg_seo;')->last_row();
+		return $seo;
+	}
+
 	public function getHeader()
 	{
 		$header = $this->db->query('SELECT * FROM mg_content_header WHERE content_header_type = "main";')->last_row();
@@ -122,13 +128,8 @@ class Home_m extends CI_Model {
 	// 	return $prom;
 	// }
 
-	public function getMainMarketing(){
-		$mmar = $this->db->query('SELECT * FROM mg_main_content WHERE main_content_type = "marketing";')->last_row();
-		return $mmar;
-	}
-
 	public function getMarketing(){
-		$mar = $this->db->query('SELECT * FROM md_user WHERE user_dept = "Marketing";')->result();
+		$mar = $this->db->query('SELECT * FROM md_user WHERE user_dept = "Marketing";')->last_row();
 		return $mar;
 	}
 }

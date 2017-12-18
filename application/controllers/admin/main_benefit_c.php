@@ -24,12 +24,14 @@ class Main_benefit_c extends CI_Controller {
 		$id = $this->input->post('main-benefit-id-input');
 		$title = $this->input->post('main-benefit-title-input');
 		$desc = $this->input->post('main-benefit-desc-input');
+		$navbar = $this->input->post('main-benefit-title-navbar-input');
 		$type = "benefit";
 		$data = array(
-			'main_content_id' => $id,
-			'main_content_title' => $title,
-			'main_content_desc' => $desc,
-			'main_content_type' => $type
+			'main_content_id'			=> $id,
+			'main_content_title'		=> $title,
+			'main_content_desc' 		=> $desc,
+			'main_content_title_navbar' => $navbar,
+			'main_content_type' 		=> $type
 			);
 		$this->main_benefit_m->edit_main_benefit('mg_main_content',$data);
 		

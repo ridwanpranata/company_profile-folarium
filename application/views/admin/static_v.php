@@ -220,7 +220,12 @@
                                 <li class="dropdown-header">System</li>
                                 <li>
                                     <a tabindex="-1" href="<?php echo base_url();?>index.php/admin/base_pages_profile_edit_c">
-                                        <i class="si si-settings pull-right"></i>Settings
+                                        <i class="si si-settings pull-right"></i>User Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a tabindex="-1" href="<?php echo base_url();?>index.php/admin/SEO_c">
+                                        <i class="si si-magnifier pull-right"></i>SEO
                                     </a>
                                 </li>
                                 <li>

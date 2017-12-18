@@ -37,26 +37,33 @@ class Manage_header_c extends CI_Controller {
 		$this->upload->initialize($config);
 
 
-		if ( ! $this->upload->do_upload('header-pict-input'))
-		{
-
-		}
-		else
-		{
-			$filename=$this->upload->data('file_name');
-		}
-
-
 		$id = $this->input->post('header-id-input');
 		$title = $this->input->post('header-title-input');
 		$desc = $this->input->post('header-desc-input');
 		$list_header = $this->input->post('header-list-input[]');
+
+		if ( ! $this->upload->do_upload('header-pict-input'))
+		{
+			if(!empty($_FILES['user-pict-input']['name'])){
+
+
+			} else {
+
+			}
+		}
+		else
+		{
+			$filename=$this->upload->data('file_name');
+			$datapict = array(
+				'content_header_pict' => $filename
+			);
+			$this->manage_header_m->edit_header_picture('mg_content_header',$datapict,$id);
+		}
 		
 
 		$data = array(
 			'content_header_title' => $title,
-			'content_header_desc' => $desc,
-			'content_header_pict' => $filename
+			'content_header_desc' => $desc
 			);
 
 		$this->manage_header_m->edit_main_header('mg_content_header',$data,$id);
